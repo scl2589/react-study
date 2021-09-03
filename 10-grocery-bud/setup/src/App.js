@@ -22,6 +22,7 @@ function App() {
       // if something is in a value, and editing is true, -> deal with edit
     } else {
       // show alert and create item 
+      showAlert(true, 'success', 'Item added to the list :) ')
       const newItem = {id: new Date().getTime().toString(), title: name}
       setList([...list, newItem])
       setName('')
