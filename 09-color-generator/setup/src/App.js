@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SingleColor from './SingleColor'
 import Values from 'values.js'
 function App() {
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('#f12345');
   const [error, setError] = useState(false);
   const [number, setNumber] = useState();
   const [list, setList] = useState(new Values('#f12345').all(10));
@@ -16,12 +16,11 @@ function App() {
       console.log(error);
     }
   }
-  async function handleNumberSubmit(e) {
+  const handleNumberSubmit = (e) => {
     e.preventDefault();
     try {
-      console.log(color, number);
-      let colors = await new Values(color).all(parseInt(number))
-      await setList(colors)
+      let colors = new Values(color).all(parseInt(number))
+      setList(colors)
     } catch(error) {
       console.log(error)
     }
@@ -36,7 +35,7 @@ function App() {
           
         </form>
         <form onSubmit={handleNumberSubmit}>
-          <input style={{width:300}} type="number" min="1" max="100" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="percentage difference" />
+          <input style={{width:300}} type="number" min="1" max="100" value={number || ''} onChange={(e) => setNumber(e.target.value)} placeholder="percentage difference" />
           <button className="btn" type="submit">submit</button>
         </form>
       </section>
