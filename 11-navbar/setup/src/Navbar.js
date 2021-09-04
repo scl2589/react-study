@@ -34,6 +34,12 @@ const Navbar = () => {
           <a href="https://www.twitter.com">
             <FaTwitter/>
           </a>
+          <a href="https://www.twitter.com">
+            <FaTwitter/>
+          </a>
+          <a href="https://www.twitter.com">
+            <FaTwitter/>
+          </a>
         </li>
       </ul>
     </div>
