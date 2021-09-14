@@ -34,6 +34,7 @@ ReactDOM.render(
 
 
 /*
+아래의 html을 React.createElement로 다음과 같이 작성할 수 있다.
 <div>
     <hello>
     <world>
